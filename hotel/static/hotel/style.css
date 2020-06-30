@@ -1,0 +1,533 @@
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.8rem;
+}
+
+p {
+  font-size: 0.6rem;
+}
+
+#apartment-jumbotron #apartment-container .back-button, nav #logout-button, nav #login-button {
+  border: none;
+  border-radius: 5px;
+  background: #F25F5C;
+  padding: 10px 35px;
+}
+
+#apartment-jumbotron #apartment-container .back-button:active, nav #logout-button:active, nav #login-button:active {
+  border: none;
+  border-radius: 5px;
+  background: #F25F5C;
+  padding: 10px 35px;
+}
+
+nav #logout-button:focus, nav #login-button:focus {
+  outline: none;
+}
+
+#results-jumbotron, #about-jumbotron, #bookings-jumbotron, #register-jumbotron, #login-jumbotron, #apartment-jumbotron, #apartments-jumbotron, #index-jumbotron {
+  height: 90%;
+  background-color: #ffffff;
+  margin-bottom: 0;
+  overflow-y: scroll;
+  padding: 20px 32px 0px 32px;
+}
+
+#results-jumbotron #results-container, #about-jumbotron #about-container, #bookings-jumbotron #bookings-container, #register-jumbotron #register-container, #login-jumbotron #login-container, #apartment-jumbotron #apartment-container, #apartments-jumbotron #apartments-container, #index-jumbotron #index-container {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+#apartment-jumbotron #apartment-container .please-login {
+  width: 100%;
+  height: 3rem;
+  background-color: rgba(243, 237, 226, 0.6);
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#register-jumbotron #register-container form button, #login-jumbotron #login-container form button, #apartment-jumbotron #apartment-container #calendar #book-form button, #index-jumbotron #search #search-form button {
+  font-size: 1rem;
+  font-family: "Abril Fatface", cursive;
+  height: 2.5rem;
+  width: 10rem;
+  padding: 2px;
+  border: none;
+  background-color: #F25F5C;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+#results-jumbotron #results-container h1, #about-jumbotron #about-container h1, #bookings-jumbotron #bookings-container h1, #register-jumbotron #register-container form h1, #login-jumbotron #login-container form h1, #apartments-jumbotron #apartments-container h1 {
+  color: #F25F5C;
+  text-align: center;
+  font-family: "Satisfy", cursive;
+}
+
+#register-jumbotron #register-container form input, #login-jumbotron #login-container form input {
+  border: none;
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: 5px;
+  background: #ccfbfe;
+  box-shadow: inset 5px 5px 8px #b4dde0, inset -5px -5px 8px #e4ffff;
+}
+
+html, body {
+  height: 100%;
+}
+
+nav {
+  height: 10%;
+  font-family: "Satisfy", cursive;
+  background-color: #ffffff;
+  padding: 10px 20px;
+}
+nav .navbar-div {
+  width: 100%;
+}
+nav .navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 1.5rem;
+  color: #0489c4;
+}
+nav #login-button {
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: "Abril Fatface", cursive;
+}
+nav #login-button:hover {
+  text-decoration: none;
+}
+nav #logout-button {
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: "Abril Fatface", cursive;
+}
+nav #logout-button:hover {
+  text-decoration: none;
+}
+
+#index-jumbotron {
+  background-image: url("../hotel/images/mainpage.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 0;
+}
+#index-jumbotron #search {
+  background-color: #F1EDEE;
+  margin-top: 0;
+  padding: 1rem;
+}
+#index-jumbotron #search #search-form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#index-jumbotron #search #search-form label {
+  font-weight: bold;
+}
+#index-jumbotron #search #search-form input {
+  border-radius: 5px;
+  border: none;
+  background: #F1EDEE;
+  box-shadow: inset 5px 5px 8px #d4d1d1, inset -5px -5px 8px #ffffff;
+  padding: 5px 20px;
+}
+#index-jumbotron #search #search-form input:focus {
+  border-radius: 5px;
+  border: 0.1px solid #F1EDEE;
+  background: #F1EDEE;
+  box-shadow: inset 5px 5px 8px #d4d1d1, inset -5px -5px 8px #ffffff;
+  padding: 5px 20px;
+}
+#index-jumbotron #search #search-form button {
+  background: #F69E1F;
+}
+#index-jumbotron #index-container {
+  font-family: "Abril Fatface", cursive;
+  color: #F69E1F;
+}
+#index-jumbotron #index-container #index-heading {
+  margin-top: 8rem;
+}
+#index-jumbotron #index-container #index-heading h1 {
+  font-size: 3rem;
+}
+#index-jumbotron #index-container #index-heading h3 {
+  font-family: "Satisfy", cursive;
+}
+#index-jumbotron #index-container #index-heading #brand-highlight {
+  color: #0489c4;
+}
+
+#apartments-jumbotron #apartments-container h1 {
+  margin-bottom: 1rem;
+}
+#apartments-jumbotron #apartments-container #head-image {
+  height: 20rem;
+}
+#apartments-jumbotron #apartments-container .apartment-display-div {
+  width: 20%;
+  vertical-align: top;
+  width: 100%;
+  margin-top: 6rem;
+}
+#apartments-jumbotron #apartments-container .apartment-display {
+  width: 20%;
+  font-size: 1rem;
+  width: 100%;
+  height: 3rem;
+  color: #0489c4;
+  background-color: rgba(243, 237, 226, 0.6);
+}
+#apartments-jumbotron #apartments-container .apartment-div {
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+  height: 10rem;
+  padding: 10px 5px;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+#apartments-jumbotron #apartments-container #one-bed {
+  background-image: url(../hotel/images/201small.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#apartments-jumbotron #apartments-container #one-bed-balcony {
+  background-image: url(../hotel/images/303-1small.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#apartments-jumbotron #apartments-container #studio {
+  background-image: url(../hotel/images/102-1small.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#apartments-jumbotron #apartments-container #studio-balcony {
+  background-image: url(../hotel/images/310.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#apartments-jumbotron #apartments-container .apartment-div:hover {
+  transform: translate(0%, -5%);
+  transition: transform 0.5s;
+}
+#apartments-jumbotron #apartments-container .apartment-info {
+  width: 95%;
+}
+#apartments-jumbotron #apartments-container .apartment-info h6, #apartments-jumbotron #apartments-container .apartment-info p {
+  display: inline;
+}
+#apartments-jumbotron #apartments-container .apartment-info p {
+  color: #0489c4;
+}
+#apartments-jumbotron #apartments-container .apartment-info:hover {
+  text-decoration: none;
+  background-color: #F1EDEE;
+}
+#apartments-jumbotron #apartments-container .apartment-info-heading {
+  font-size: 0.8rem;
+  color: #F69E1F;
+}
+
+#apartment-jumbotron #apartment-container .apt-info-text {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  height: 10rem;
+}
+#apartment-jumbotron #apartment-container .apt-info {
+  display: inline-flex;
+}
+#apartment-jumbotron #apartment-container .apt-info-1 {
+  padding: 1rem 0.2rem;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: rgba(204, 251, 254, 0.651);
+}
+#apartment-jumbotron #apartment-container .apt-info-2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+#apartment-jumbotron #apartment-container .apt-info p {
+  font-size: 1rem;
+}
+#apartment-jumbotron #apartment-container .apt-info h1 {
+  color: #F25F5C;
+  font-family: "Abril Fatface", cursive;
+}
+#apartment-jumbotron #apartment-container .apt-accent {
+  font-weight: bold;
+  color: #0489c4;
+}
+#apartment-jumbotron #apartment-container .back-button {
+  text-decoration: none;
+  color: #ffffff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+#apartment-jumbotron #apartment-container .please-login h6 {
+  color: #F25F5C;
+  margin: auto;
+}
+#apartment-jumbotron #apartment-container .please-login h6 a {
+  color: #0489c4;
+}
+#apartment-jumbotron #apartment-container .please-login h6 a:hover {
+  text-decoration: none;
+  color: #3A405A;
+}
+#apartment-jumbotron #apartment-container #open-calendar {
+  margin-top: 2rem;
+  color: #F69E1F;
+  font-family: "Abril Fatface", cursive;
+}
+#apartment-jumbotron #apartment-container #open-calendar:hover {
+  cursor: pointer;
+  color: #3A405A;
+}
+#apartment-jumbotron #apartment-container #calendar {
+  margin-top: 2rem;
+}
+#apartment-jumbotron #apartment-container #calendar h4 {
+  font-family: "Satisfy", cursive;
+  color: #0489c4;
+}
+#apartment-jumbotron #apartment-container #calendar #move-down, #apartment-jumbotron #apartment-container #calendar #move-up {
+  background-color: rgba(204, 251, 254, 0.651);
+  border: none;
+  font-weight: bold;
+}
+#apartment-jumbotron #apartment-container #calendar #previous-month, #apartment-jumbotron #apartment-container #calendar #next-month {
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+#apartment-jumbotron #apartment-container #calendar form {
+  margin-top: 1rem;
+}
+#apartment-jumbotron #apartment-container #calendar #book-form {
+  background-color: #F1EDEE;
+  margin-top: 0;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#apartment-jumbotron #apartment-container #calendar #book-form label {
+  font-weight: bold;
+}
+#apartment-jumbotron #apartment-container #calendar #book-form input {
+  border-radius: 5px;
+  border: none;
+  background: #F1EDEE;
+  box-shadow: inset 5px 5px 8px #d4d1d1, inset -5px -5px 8px #ffffff;
+  padding: 5px 20px;
+}
+#apartment-jumbotron #apartment-container #calendar #book-form input:focus {
+  border-radius: 5px;
+  border: 0.1px solid #F1EDEE;
+  background: #F1EDEE;
+  box-shadow: inset 5px 5px 8px #d4d1d1, inset -5px -5px 8px #ffffff;
+  padding: 5px 20px;
+}
+#apartment-jumbotron #apartment-container #calendar #book-form button {
+  background: #F69E1F;
+}
+
+#login-jumbotron {
+  background-image: url("../hotel/images/loginbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+#login-jumbotron #login-container form {
+  width: 40%;
+  height: 30rem;
+  background-color: #ccfbfe;
+  margin: auto;
+  padding: 3rem 2rem;
+  border-radius: 5px;
+}
+#login-jumbotron #login-container form h1 {
+  margin-bottom: 2rem;
+}
+#login-jumbotron #login-container form button {
+  margin-top: 2rem;
+}
+#login-jumbotron #login-container form input:focus {
+  box-shadow: 0 0 0 0rem black;
+}
+#login-jumbotron #login-container form p {
+  margin-top: 3rem;
+  font-size: 0.8rem;
+}
+#login-jumbotron #login-container form p a {
+  color: #0489c4;
+}
+
+#register-jumbotron {
+  background-image: url("../hotel/images/loginbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+#register-jumbotron #register-container form {
+  width: 70%;
+  height: 30rem;
+  background-color: #ccfbfe;
+  padding: 1.5rem 2rem;
+  border-radius: 5px;
+  margin: auto;
+}
+#register-jumbotron #register-container form #register-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+#register-jumbotron #register-container form h1 {
+  margin: auto;
+  margin-bottom: 1rem;
+}
+#register-jumbotron #register-container form p {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+#register-jumbotron #register-container form p:nth-last-child(2) {
+  display: none;
+}
+#register-jumbotron #register-container form button {
+  margin-top: 2rem;
+}
+#register-jumbotron #register-container form label {
+  font-size: 1rem;
+  display: inline;
+}
+#register-jumbotron #register-container form input {
+  height: calc(1.5em + .75rem + 2px);
+  display: inline;
+}
+#register-jumbotron #register-container form input:focus {
+  outline: none;
+}
+#register-jumbotron #register-container form ul {
+  display: none;
+}
+#register-jumbotron #register-container form #have-account {
+  margin-top: 3rem;
+  font-size: 0.8rem;
+  width: 20rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+#register-jumbotron #register-container form #have-account a {
+  color: #0489c4;
+}
+
+#bookings-jumbotron #bookings-container .booking {
+  display: inline-flex;
+  justify-content: space-between;
+  background-color: #F1EDEE;
+  padding: 2rem 1rem;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+#bookings-jumbotron #bookings-container .booking img {
+  height: 8rem;
+}
+#bookings-jumbotron #bookings-container .booking .emphasis {
+  font-weight: bold;
+  color: #0489c4;
+}
+#bookings-jumbotron #bookings-container .booking h5 {
+  width: 20%;
+  color: #F69E1F;
+}
+#bookings-jumbotron #bookings-container .booking .booking-apartment {
+  width: 30%;
+}
+#bookings-jumbotron #bookings-container .booking .booking-details #booking-total-cost {
+  color: #F25F5C;
+}
+
+#about-jumbotron #about-container #photo-gallery {
+  margin: 1rem auto 0 auto;
+}
+#about-jumbotron #about-container #photo-gallery img {
+  height: 13rem;
+}
+#about-jumbotron #about-container #photo-gallery .row {
+  margin-bottom: 1rem;
+}
+
+#results-jumbotron #results-container .results-info a:hover {
+  text-decoration: none;
+}
+#results-jumbotron #results-container .results-booking {
+  display: inline-flex;
+  justify-content: space-between;
+  background-color: #F1EDEE;
+  padding: 1rem 2rem;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #3A405A;
+}
+#results-jumbotron #results-container .results-booking img {
+  height: 6rem;
+}
+#results-jumbotron #results-container .results-booking .emphasis {
+  font-weight: bold;
+  color: #0489c4;
+}
+#results-jumbotron #results-container .results-booking h5 {
+  color: #F69E1F;
+}
+#results-jumbotron #results-container .results-booking h4 {
+  font-family: "Abril Fatface", cursive;
+}
+#results-jumbotron #results-container .results-booking .results-details {
+  width: 30%;
+}
+#results-jumbotron #results-container .results-booking #book-here {
+  color: #F25F5C;
+}
+#results-jumbotron #results-container .results-booking:hover {
+  background-color: #9DBF9E;
+}
+
+/*# sourceMappingURL=style.css.map */

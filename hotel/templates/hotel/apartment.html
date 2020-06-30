@@ -1,0 +1,276 @@
+{% extends 'hotel/base.html' %}
+
+{% block title %}
+Cyprus For You | Apartments
+{% endblock %}
+
+{% block body %}
+
+<div class="jumbotron" id="apartment-jumbotron">
+    <div class="container" id="apartment-container">
+        <div class="apt-info">
+            <div class="apt-info-1">
+                <h1>{{ apartment.room_category }} Apartment {{ apartment.room_name }}</h1>
+                <div class="apt-info-text">
+                    <p><span class="apt-accent">Bed Type:</span> {{ apartment.bed_type }}</p>
+                    {% if apartment.balcony is not True %}
+                        <p><span class="apt-accent">Balcony:</span> No</p>
+                    {% elif apartment.balcony is True %}
+                        <p><span class="apt-accent">Balcony:</span> Yes</p>
+                    {% endif %}
+                    <p><span class="apt-accent">Maximum occupancy:</span> {{ apartment.max_number_of_guests }}</p>
+                    <p><span class="apt-accent">Cost per night:</span> EUR {{ apartment.cost_per_night }}</p>
+                </div>
+            </div>
+            <div class="apt-info-2">
+                <img src="../../static/hotel/images/{{apartment.room_name}}.jpg" height="230">
+                <img src="../../static/hotel/images/{{apartment.room_name}}-1.jpg" height="230">
+                <img src="../../static/hotel/images/{{apartment.room_name}}-2.jpg" height="230">
+                <img src="../../static/hotel/images/{{apartment.room_name}}-3.jpg" height="230">
+            </div> 
+        </div>
+
+        {% if user.is_authenticated %}
+            <div class="book-here">
+
+                <h3 id="open-calendar">Click here to see availability</h3>
+
+                <div style="display: none;" id="calendar">
+                    <div style="display: block;" id="july2020">
+                        <table class="table" id="july">
+                            <h4>July 2020</h4>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Mon</th>
+                                    <th scope="col">Tue</th>
+                                    <th scope="col">Wed</th>
+                                    <th scope="col">Thu</th>
+                                    <th scope="col">Fri</th>
+                                    <th scope="col">Sat</th>
+                                    <th scope="col">Sun</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td id="2020-07-01">1</td>
+                                    <td id="2020-07-02">2</td>
+                                    <td id="2020-07-03">3</td>
+                                    <td id="2020-07-04">4</td>
+                                    <td id="2020-07-05">5</td>
+                                </tr>
+                                <tr>
+                                    <td id="2020-07-06">6</td>
+                                    <td id="2020-07-07">7</td>
+                                    <td id="2020-07-08">8</td>
+                                    <td id="2020-07-09">9</td>
+                                    <td id="2020-07-10">10</td>
+                                    <td id="2020-07-11">11</td>
+                                    <td id="2020-07-12">12</td>
+                                </tr>
+                                <tr>
+                                    <td id="2020-07-13">13</td>
+                                    <td id="2020-07-14">14</td>
+                                    <td id="2020-07-15">15</td>
+                                    <td id="2020-07-16">16</td>
+                                    <td id="2020-07-17">17</td>
+                                    <td id="2020-07-18">18</td>
+                                    <td id="2020-07-19">19</td>
+                                </tr>
+                                <tr>
+                                    <td id="2020-07-20">20</td>
+                                    <td id="2020-07-21">21</td>
+                                    <td id="2020-07-22">22</td>
+                                    <td id="2020-07-23">23</td>
+                                    <td id="2020-07-24">24</td>
+                                    <td id="2020-07-25">25</td>
+                                    <td id="2020-07-26">26</td>
+                                </tr>
+                                <tr>
+                                    <td id="2020-07-27">27</td>
+                                    <td id="2020-07-28">28</td>
+                                    <td id="2020-07-29">29</td>
+                                    <td id="2020-07-30">30</td>
+                                    <td id="2020-07-31">31</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="display: none;" id="august2020">
+                        <table class="table" id="august">
+                            <h4>August 2020</h4>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Mon</th>
+                                    <th scope="col">Tue</th>
+                                    <th scope="col">Wed</th>
+                                    <th scope="col">Thu</th>
+                                    <th scope="col">Fri</th>
+                                    <th scope="col">Sat</th>
+                                    <th scope="col">Sun</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td id="2020-08-01">1</td>
+                                    <td id="2020-08-02">2</td>
+                                </tr>
+                                <tr>
+                                    <td id="2020-08-03">3</td>
+                                    <td id="2020-08-04">4</td>
+                                    <td id="2020-08-05">5</td>
+                                    <td id="2020-08-06">6</td>
+                                    <td id="2020-08-07">7</td>
+                                    <td id="2020-08-08">8</td>
+                                    <td id="2020-08-09">9</td>
+                                </tr>
+                                <tr>
+                                    <td id="2020-08-10">10</td>
+                                    <td id="2020-08-11">11</td>
+                                    <td id="2020-08-12">12</td>
+                                    <td id="2020-08-13">13</td>
+                                    <td id="2020-08-14">14</td>
+                                    <td id="2020-08-15">15</td>
+                                    <td id="2020-08-16">16</td>
+                                </tr>
+                                <tr>
+                                    <td id="2020-08-17">17</td>
+                                    <td id="2020-08-18">18</td>
+                                    <td id="2020-08-19">19</td>
+                                    <td id="2020-08-20">20</td>
+                                    <td id="2020-08-21">21</td>
+                                    <td id="2020-08-22">22</td>
+                                    <td id="2020-08-23">23</td>
+                                </tr>
+                                <tr>
+                                    <td id="2020-08-24">24</td>
+                                    <td id="2020-08-25">25</td>
+                                    <td id="2020-08-26">26</td>
+                                    <td id="2020-08-27">27</td>
+                                    <td id="2020-08-28">28</td>
+                                    <td id="2020-08-29">29</td>
+                                    <td id="2020-08-30">30</td>
+                                </tr>
+                                <tr>
+                                    <td id="2020-08-31">31</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="display: none;" id="september2020">
+                        <table class="table" id="september">
+                            <h4>September 2020</h4>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Mon</th>
+                                    <th scope="col">Tue</th>
+                                    <th scope="col">Wed</th>
+                                    <th scope="col">Thu</th>
+                                    <th scope="col">Fri</th>
+                                    <th scope="col">Sat</th>
+                                    <th scope="col">Sun</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td id="2020-09-01">1</td>
+                                    <td id="2020-09-02">2</td>
+                                    <td id="2020-09-03">3</td>
+                                    <td id="2020-09-04">4</td>
+                                    <td id="2020-09-05">5</td>
+                                    <td id="2020-09-06">6</td>
+                                </tr>
+                                <tr>
+                                    <td id="2020-09-07">7</td>
+                                    <td id="2020-09-08">8</td>
+                                    <td id="2020-09-09">9</td>
+                                    <td id="2020-09-10">10</td>
+                                    <td id="2020-09-11">11</td>
+                                    <td id="2020-09-12">12</td>
+                                    <td id="2020-09-13">13</td>
+                                </tr>
+                                <tr>
+                                    <td id="2020-09-14">14</td>
+                                    <td id="2020-09-15">15</td>
+                                    <td id="2020-09-16">16</td>
+                                    <td id="2020-09-17">17</td>
+                                    <td id="2020-09-18">18</td>
+                                    <td id="2020-09-19">19</td>
+                                    <td id="2020-09-20">20</td>
+                                </tr>
+                                <tr>
+                                    <td id="2020-09-21">21</td>
+                                    <td id="2020-09-22">22</td>
+                                    <td id="2020-09-23">23</td>
+                                    <td id="2020-09-24">24</td>
+                                    <td id="2020-09-25">25</td>
+                                    <td id="2020-09-26">26</td>
+                                    <td id="2020-09-27">27</td>
+                                </tr>
+                                <tr>
+                                    <td id="2020-09-28">28</td>
+                                    <td id="2020-09-29">29</td>
+                                    <td id="2020-09-30">30</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <button id="move-down"><span id="previous-month">Previous Month</span><</button>
+                    <button id="move-up">><span id="next-month">Next Month</span></button>
+
+                    <form action="{% url 'book' %}" method="post">
+                        {% csrf_token %}
+                        <div id="book-form">
+                            <div id="book-form-check-in">
+                                <label for="book-form-check-in-input">Check In</label>
+                                <input type="date" id="book-form-check-in-input" name="check-in">
+                            </div>
+                            <div id="book-form-check-out">
+                                <label for="book-form-check-out-input">Check Out</label>
+                                <input type="date" id="book-form-check-out-input" name="check-out">
+                            </div>
+                            <div id="book-form-check-cot">
+                                <label for="cot">Cot bed</label>
+                                <input type="checkbox" id="cot" name="cot">
+                            </div>
+                            <label type="hidden" for="check-id"></label>
+                            <input type="hidden" id="check-id" name="check-id" value="{{ apartment.id }}">
+                            <button type="submit" class="btn btn-primary">Book</button>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        {% else %}
+            <div class="please-login">
+                <h6>To book this apartment, please <a href="{% url 'register' %}?next={{ request.path }}">REGISTER</a> or <a href="{% url 'login' %}?next={{ request.path }}">LOG IN</a></h6>
+            </div>
+        {% endif %}
+        <a class="back-button" href="{% url 'apartments' %}">Back to apartments</a>
+    </div>
+</div>
+
+<script id="calendar-data" value="{{ bookings }}">{{ bookings }}</script>
+
+<script src="../../static/hotel/apartment.js"></script>
+{% endblock %}

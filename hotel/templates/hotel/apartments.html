@@ -1,0 +1,82 @@
+{% extends 'hotel/base.html' %}
+
+{% block title %}
+Cyprus For You | Apartments
+{% endblock %}
+
+{% block body %}
+
+<div class="jumbotron" id="apartments-jumbotron">
+    <div class="container" id="apartments-container">
+
+        <h1>Our Apartments</h1>
+
+        <h6>We offer a choice of 14 one-bedroom apartments and 18 studio apartments, with equipped kitchens and en-suite bathrooms. </h6>
+        <h6>Please click on the links below to see detailed information about our apartments.</h6>
+
+        <div class="apartment-div" id="one-bed">
+            <h3 class="apartment-display">One Bedroom Apartments</h3>
+            <div class="apartment-display-div" id="div-one-bed" style="display: none;">
+                {% for apartment in apartments %} 
+                    {% if apartment.balcony is not True and apartment.room_category.category == 'One Bedroom' %}
+                        <a class="apartment-info" href="{% url 'apartment' apartment.id %}">
+                            <h6 class="apartment-info-heading">Apt {{ apartment.room_name }}</h6>
+                            <h6>EUR {{apartment.cost_per_night}} per night</h6>
+                        </a>
+                        <br>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="apartment-div" id="one-bed-balcony">
+            <h3 class="apartment-display">One Bedroom Apartments With Balcony</h3>
+            <div class="apartment-display-div" id="div-one-bed-balcony" style="display: none;">
+            {% for apartment in apartments %} 
+                {% if apartment.balcony is True and apartment.room_category.category == 'One Bedroom' %}
+                    <a  class="apartment-info"href="{% url 'apartment' apartment.id %}">
+                        <h6 class="apartment-info-heading">Apt {{ apartment.room_name }}</h6>
+                        <h6>EUR {{apartment.cost_per_night}} per night</h6>
+                    </a>
+                    <br>
+                {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+
+        <div class="apartment-div" id="studio">
+            <h3 class="apartment-display">Studio Apartments</h3> 
+            <div class="apartment-display-div" id="div-studio" style="display: none;">
+            {% for apartment in apartments %} 
+                {% if apartment.balcony is not True and apartment.room_category.category == 'Studio' %}
+                    <a class="apartment-info"href="{% url 'apartment' apartment.id %}">
+                        <h6 class="apartment-info-heading">Apt {{ apartment.room_name }}</h6>
+                        <h6>EUR {{apartment.cost_per_night}} per night</h6>
+                    </a>
+                    <br>
+                {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+
+        <div class="apartment-div" id="studio-balcony">
+            <h3 class="apartment-display">Studio Apartments With Balcony</h3>
+            <div class="apartment-display-div" id="div-studio-balcony" style="display: none;">
+            {% for apartment in apartments %} 
+                {% if apartment.balcony is True and apartment.room_category.category == 'Studio' %}
+                    <a class="apartment-info" href="{% url 'apartment' apartment.id %}">
+                        <h6 class="apartment-info-heading">Apt {{ apartment.room_name }}</h6>
+                        <h6>EUR {{apartment.cost_per_night}} per night</h6>
+                    </a>
+                    <br>
+                {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+        
+
+    </div>
+</div>
+
+<script src="../../static/hotel/apartments.js"></script>
+{% endblock %}

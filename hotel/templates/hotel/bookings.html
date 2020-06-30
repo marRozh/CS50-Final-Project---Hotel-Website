@@ -1,0 +1,41 @@
+{% extends 'hotel/base.html' %}
+
+{% block title %}
+Cyprus For You | Your Bookings
+{% endblock %}
+
+{% block body %}
+
+<div class="jumbotron" id="bookings-jumbotron">
+    <div class="container" id="bookings-container">
+
+        <h1>Your Bookings</h1>
+        
+        <div class="bookings-info">
+
+            {% for booking in bookings %}
+                <div class="booking" id="{{ booking.id }}">
+                    <h5>Booking Number: 
+                        <br>
+                    {{ booking.id }}</h5>
+                    <img src="../../static/hotel/images/{{booking.apartment.room_name}}.jpg">
+                    <div class="booking-apartment">
+                        <h6>{{ booking.apartment }}</h6>
+                        <h6><span class="emphasis">Maximum Occupancy:</span> {{ booking.apartment.max_number_of_guests }}</h6>
+                    </div>
+
+                    <div class="booking-details">
+                        <h6><span class="emphasis">Check In Date:</span> {{ booking.check_in }}</h6>
+                        <h6><span class="emphasis">Check Out Date:</span> {{ booking.check_out }}</h6>
+                        {% if booking.extra_bed %}
+                            <h6> You requested an extra baby cot </h6>
+                        {% endif %}
+                        <h6 id="booking-total-cost" ><span class="emphasis">Total Cost:</span> EUR {{ booking.total_cost }}</h6>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

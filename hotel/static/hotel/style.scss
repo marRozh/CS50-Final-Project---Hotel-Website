@@ -1,0 +1,776 @@
+//COLOURS
+
+$brand-orange: #F69E1F;
+$brand-blue: #0489c4;
+$light: #F1EDEE;
+$light-transparent: rgba(243, 237, 226, 0.6);
+$brand-blue-transparent: rgba(204, 251, 254, 0.651);
+
+$accent-red: #F25F5C;
+$accent-green: #9DBF9E;
+$cyan: #ccfbfe;
+$dark-blue: #3A405A;
+
+$nav-background-color: #ffffff;
+$button-background-color: #F69E1F;
+$button-color: #ffffff;
+$checkout-button-color: #ffffff;
+$main-heading-color: #0A8CC4;
+$secondary-heading-color: #F69E1F;
+
+//FONTS
+$accent-font: 'Satisfy', cursive;
+$regular-font: 'Assistant', sans-serif;
+$second-accent-font: 'Abril Fatface', cursive;
+
+h1 {
+    font-size: 2rem;
+}
+h2 {
+    font-size: 1.6rem;
+}
+h3 {
+    font-size: 1.4rem;
+}
+h4 {
+    font-size: 1.2rem;
+}
+h5 {
+    font-size: 1rem;
+}
+h6 {
+    font-size: 0.8rem;
+}
+p {
+    font-size: 0.6rem;
+}
+
+//STYLES
+
+%login-button {
+    border: none;
+    border-radius: 5px;
+    background: $accent-red;
+    padding: 10px 35px;
+}
+
+%login-button-active {
+    border: none;
+    border-radius: 5px;
+    background: $accent-red;
+    padding: 10px 35px;
+}
+
+%login-button-focus {
+    outline: none;
+}
+
+%jumbotron-settings {
+    height: 90%;
+    background-color: #ffffff;
+    margin-bottom: 0;
+    overflow-y: scroll;
+    padding: 20px 32px 0px 32px;
+}
+
+%container-settings {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+%notification-bar {
+    width: 100%;
+    height: 3rem;
+    background-color: $light-transparent;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+%small-button {
+    font-size: 1rem;
+    font-family: $second-accent-font;
+    height: 2.5rem;
+    width: 10rem;
+    padding: 2px;
+    border: none;
+    background-color: $accent-red;
+    color: $button-color;
+    border-radius: 5px;
+}
+
+%checkout-button {
+    color: $checkout-button-color;
+    font-family: $accent-font;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    border-radius: 7px;
+    border: none;
+    background: #c49f8f;
+    box-shadow:  5px 5px 10px #7a6359, 
+             -5px -5px 10px #e3b8a6;
+}
+
+%checkout-button-active{
+    color: $checkout-button-color;
+    font-family: $accent-font;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    border-radius: 7px;
+    border: none;
+    background: #c49f8f;
+    box-shadow: inset 5px 5px 7px #b29182, 
+                inset -5px -5px 7px #d6ad9c;
+}
+
+%main-heading {
+    color: $accent-red;
+    text-align: center;
+    font-family: $accent-font;
+}
+
+%secondary-heading {
+    color: $secondary-heading-color;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 2rem;
+}
+
+%input-fields {
+    border: none;
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 5px;
+    background: #ccfbfe;
+    box-shadow: inset 5px 5px 8px #b4dde0, 
+            inset -5px -5px 8px #e4ffff;
+}
+
+//GENERAL
+
+html, body {
+    height: 100%;
+}
+
+//NAVBAR
+
+nav {
+    height: 10%;
+    font-family: $accent-font;
+    background-color: $nav-background-color;
+    padding: 10px 20px;
+
+    .navbar-div {
+        width: 100%;
+    }
+
+    .navbar-brand {
+        padding-top: 0;
+        padding-bottom: 0;
+        font-size: 1.5rem;
+        color: $brand-blue;
+    }
+
+    #login-button {
+        @extend %login-button;
+        color: #ffffff;
+        font-size: 1rem;
+        font-family: $second-accent-font;
+    }
+    #login-button:active {
+        @extend %login-button-active;
+    }
+    #login-button:focus {
+        @extend %login-button-focus;
+    }
+    #login-button:hover {
+        text-decoration: none;
+    }
+
+    #logout-button {
+        @extend %login-button;
+        color: #ffffff;
+        font-size: 1rem;
+        font-family: $second-accent-font;
+    }
+    #logout-button:active {
+        @extend %login-button-active;
+    }
+    #logout-button:focus {
+        @extend %login-button-focus;
+    }
+    #logout-button:hover {
+        text-decoration: none;
+    }
+
+}
+
+//MAIN CONTENT
+#index-jumbotron {
+    @extend %jumbotron-settings;
+    background-image: url('../hotel/images/mainpage.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0;
+
+    #search {
+        background-color: $light;
+        margin-top: 0;
+        padding: 1rem;
+
+        #search-form {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+
+            label {
+                font-weight: bold;
+            }
+            input { 
+                border-radius: 5px;
+                border: none;
+                background: #F1EDEE;
+                box-shadow: inset 5px 5px 8px #d4d1d1, 
+                inset -5px -5px 8px #ffffff;
+                padding: 5px 20px;
+            }
+            input:focus { 
+                border-radius: 5px;
+                border: 0.1px solid #F1EDEE;
+                background: #F1EDEE;
+                box-shadow: inset 5px 5px 8px #d4d1d1, 
+                inset -5px -5px 8px #ffffff;
+                padding: 5px 20px;
+            }
+            button {
+                @extend %small-button;
+                background: $brand-orange;
+            }
+        }
+
+
+    }
+
+    #index-container {
+        @extend %container-settings;
+        font-family: $second-accent-font;
+        color: $brand-orange;
+
+
+        #index-heading {
+            margin-top: 8rem;
+
+            h1 {
+                font-size: 3rem;
+            }
+            h3 {
+                font-family: $accent-font;
+            }
+    
+            #brand-highlight {
+                color: $brand-blue;
+            }
+        }
+
+
+    }
+}
+
+#apartments-jumbotron {
+    @extend %jumbotron-settings;
+
+    #apartments-container {
+        @extend %container-settings;
+
+        h1 {
+            @extend %main-heading;
+            margin-bottom: 1rem;
+        }
+
+        #head-image {
+            height: 20rem;
+        }
+
+        .apartment-display-div {
+            width: 20%;
+            vertical-align: top;
+            width: 100%;
+            margin-top: 6rem;
+        }
+
+        .apartment-display {
+            width: 20%;
+            font-size: 1rem;
+            width: 100%;
+            height: 3rem;
+            color: $brand-blue;
+            background-color: $light-transparent
+        }
+
+        .apartment-div {
+            width: 20%;
+            display: inline-block;
+            vertical-align: top;
+            height: 10rem;
+            padding: 10px 5px;
+            cursor: pointer;
+            margin-top: 2rem;
+        }
+
+        #one-bed {
+            background-image: url(../hotel/images/201small.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #one-bed-balcony{
+            background-image: url(../hotel/images/303-1small.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #studio {
+            background-image: url(../hotel/images/102-1small.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #studio-balcony {
+            background-image: url(../hotel/images/310.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .apartment-div:hover{
+            transform: translate(0%, -5%);
+            transition: transform 0.5s;
+        }
+
+        .apartment-info {
+            width: 95%;
+            h6, p {
+                display: inline;
+            }
+
+            p {
+                color: $brand-blue;
+            }
+        }
+
+        .apartment-info:hover {
+            text-decoration: none;
+            background-color: $light;
+        }
+
+        .apartment-info-heading {
+            font-size: 0.8rem;
+            color: $brand-orange;
+        }
+
+
+    }
+}
+
+#apartment-jumbotron {
+    @extend %jumbotron-settings;
+    
+
+    #apartment-container {
+        @extend %container-settings;
+
+        .apt-info-text {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            height: 10rem;
+        }
+
+        .apt-info {
+            display: inline-flex;
+        }
+
+        .apt-info-1 {
+            padding: 1rem 0.2rem;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            background-color: $brand-blue-transparent;
+        }
+        .apt-info-2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .apt-info p {
+            font-size: 1rem;
+        }
+
+        .apt-info h1 {
+            color: $accent-red;
+            font-family: $second-accent-font;
+        }
+
+        .apt-accent {
+            font-weight: bold;
+            color: $brand-blue;
+        }
+
+        .back-button {
+            @extend %login-button;
+            text-decoration: none;
+            color: $button-color;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+        .back-button:active {
+            @extend %login-button-active;
+        }
+
+        .please-login {
+            @extend %notification-bar;
+
+            h6 {
+                color: $accent-red;
+                margin: auto;
+                a{
+                    color: $brand-blue;
+                }
+                a:hover {
+                    text-decoration: none;
+                    color: $dark-blue;
+                }
+            }
+
+        }
+
+        #open-calendar {
+            margin-top: 2rem;
+            color: $brand-orange;
+            font-family: $second-accent-font;
+        }
+        #open-calendar:hover {
+            cursor: pointer;
+            color: $dark-blue;
+        }
+
+        #calendar {
+            margin-top: 2rem;
+
+            h4 {
+                font-family: $accent-font;
+                color: $brand-blue;
+            }
+
+            #move-down, #move-up {
+                background-color: $brand-blue-transparent;
+                border: none;
+                font-weight: bold;
+            }
+
+            #previous-month, #next-month {
+                font-size: 0.8rem;
+                font-weight: normal;
+            }
+
+            form {
+                margin-top: 1rem;
+            }
+            
+            #book-form {
+                background-color: $light;
+                margin-top: 0;
+                padding: 1rem;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+        
+
+                label {
+                    font-weight: bold;
+                }
+                input { 
+                    border-radius: 5px;
+                    border: none;
+                    background: #F1EDEE;
+                    box-shadow: inset 5px 5px 8px #d4d1d1, 
+                    inset -5px -5px 8px #ffffff;
+                    padding: 5px 20px;
+                }
+                input:focus { 
+                    border-radius: 5px;
+                    border: 0.1px solid #F1EDEE;
+                    background: #F1EDEE;
+                    box-shadow: inset 5px 5px 8px #d4d1d1, 
+                    inset -5px -5px 8px #ffffff;
+                    padding: 5px 20px;
+                }
+                button {
+                    @extend %small-button;
+                    background: $brand-orange;
+                }
+        
+            }
+        }
+    }
+}
+
+#login-jumbotron {
+    @extend %jumbotron-settings;
+    background-image: url('../hotel/images/loginbg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    #login-container {
+        @extend %container-settings;
+
+
+        form {
+            width: 40%;
+            height: 30rem;
+            background-color: $cyan;
+            margin: auto;
+            padding: 3rem 2rem;
+            border-radius: 5px;
+
+            h1 {
+                @extend %main-heading;
+                margin-bottom: 2rem;
+            }
+
+            button {
+                @extend %small-button;
+                margin-top: 2rem;
+            }
+
+            input {
+                @extend %input-fields;
+            }
+            input:focus { 
+                box-shadow: 0 0 0 0rem rgba(0,0,0);
+            }
+
+            p {
+                margin-top: 3rem;
+                font-size: 0.8rem;
+
+                a {
+                    color: $brand-blue;
+                }
+            }
+        }
+    }
+}
+
+#register-jumbotron {
+    @extend %jumbotron-settings;
+    background-image: url('../hotel/images/loginbg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    #register-container {
+        @extend %container-settings;
+
+        form {
+            width: 70%;
+            height: 30rem;
+            background-color: $cyan;
+            padding: 1.5rem 2rem;
+            border-radius: 5px;
+            margin: auto;
+
+            #register-form {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            h1 {
+                @extend %main-heading;
+                margin: auto;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            p:nth-last-child(2) {
+                display: none;
+            }
+
+            button {
+                @extend %small-button;
+                margin-top: 2rem;
+            }
+
+            label {
+                font-size: 1rem;
+                display: inline;
+            }
+
+            input {
+                @extend %input-fields;
+                height: calc(1.5em + .75rem + 2px);
+                display: inline;
+            }
+            input:focus { 
+                outline: none;
+            }
+
+            ul {
+                display: none;
+            }
+
+            #have-account {
+                margin-top: 3rem;
+                font-size: 0.8rem;
+                width: 20rem;
+                margin-right: auto;
+                margin-left: auto;
+
+                a {
+                    color: $brand-blue;
+                }
+            }
+        }
+    }
+}
+
+#bookings-jumbotron {
+    @extend %jumbotron-settings;
+
+    #bookings-container {
+        @extend %container-settings;
+
+        h1 {
+             @extend %main-heading;
+        }
+
+        .booking {
+            display: inline-flex;
+            justify-content: space-between;
+            background-color: $light;
+            padding: 2rem 1rem;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 1rem;
+
+            img { 
+                height: 8rem;
+            }
+
+            .emphasis {
+                font-weight: bold;
+                color: $brand-blue;
+            }
+
+            h5 {
+                width: 20%;
+                color: $brand-orange;
+            }
+
+            .booking-apartment {
+                width: 30%;
+            }
+
+            .booking-details {
+                #booking-total-cost {
+                    color: $accent-red;
+                }
+            }
+        }
+    }
+}
+
+#about-jumbotron {
+    @extend %jumbotron-settings;
+
+    #about-container {
+        @extend %container-settings;
+
+
+        h1 {
+            @extend %main-heading;
+        }
+
+        #photo-gallery {
+            margin: 1rem auto 0 auto;
+
+            img {
+                height: 13rem;
+            }
+
+            .row {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+#results-jumbotron {
+    @extend %jumbotron-settings;
+
+    #results-container {
+        @extend %container-settings;
+
+        h1{
+            @extend %main-heading;
+        }
+
+        .results-info a:hover {
+            text-decoration: none;
+        }
+
+        .results-booking {
+            display: inline-flex;
+            justify-content: space-between;
+            background-color: $light;
+            padding: 1rem 2rem;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 1rem;
+            color: $dark-blue;
+
+            img { 
+                height: 6rem;
+            }
+
+            .emphasis {
+                font-weight: bold;
+                color: $brand-blue;
+            }
+
+            h5 {
+                color: $brand-orange;
+            }
+
+            h4 {
+                font-family: $second-accent-font;
+            }
+
+            .results-details {
+                width: 30%;
+            }
+
+            #book-here {
+                color: $accent-red;
+            }
+        }
+
+        .results-booking:hover {
+            background-color: $accent-green;
+        }
+    }
+}

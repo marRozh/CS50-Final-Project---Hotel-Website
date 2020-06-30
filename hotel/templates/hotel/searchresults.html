@@ -1,0 +1,64 @@
+{% extends 'hotel/base.html' %}
+
+{% block title %}
+Cyprus For You | Available Apartments
+{% endblock %}
+
+{% block body %}
+
+<div class="jumbotron" id="results-jumbotron">
+    <div class="container" id="results-container">
+
+        <h1>Available Apartments</h1>
+        
+        <div class="results-info">
+
+            
+            {% if not_available %}
+                {% for apartment in apartments %}
+                    {% for i in not_available %}
+                        {% if i != apartment.id %}
+                            <a href="{% url 'apartment' apartment.id %}">
+                                <div class="results-booking">
+                                    <img src="../../static/hotel/images/{{ apartment.room_name }}.jpg">
+                                    <div class="results-apartment">
+                                        <h5> {{ apartment}} </h5>
+                                    </div>
+
+                                    <div class="results-details">
+                                        <h6><span class="emphasis">Maximum Occupancy:</span>  {{ apartment.max_number_of_guests }} </h6>
+                                        <h6 id="results-total-cost" ><span class="emphasis">Cost per night:</span> EUR {{ apartment.cost_per_night}} </h6>
+                                    </div> 
+                                    <h4 id="book-here">Book Here</h4>
+                                </div>
+                            </a>
+                            <br>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            {% else %}
+                {% for apartment in apartments %}
+                    <a href="{% url 'apartment' apartment.id %}">
+                        <div class="results-booking">
+                            <img src="../../static/hotel/images/{{ apartment.room_name }}.jpg">
+                            <div class="results-apartment">
+                                <h5> {{ apartment}} </h5>
+                            </div>
+                        
+                            <div class="results-details">
+                                <h6><span class="emphasis">Maximum Occupancy:</span>  {{ apartment.max_number_of_guests }} </h6>
+                                <h6 id="results-total-cost" ><span class="emphasis">Cost per night:</span> EUR {{ apartment.cost_per_night}} </h6>
+                            </div> 
+                            <h4 id="book-here">Book Here</h4>
+                        </div>
+                    </a>
+                    <br>
+                {% endfor %}
+            {% endif %}
+            
+
+        </div>
+
+    </div>
+</div>
+{% endblock %}

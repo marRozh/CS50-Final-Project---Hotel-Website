@@ -1,0 +1,40 @@
+{% extends 'hotel/base.html' %}
+
+{% block title %}
+Cyprus For You
+{% endblock %}
+
+{% block body %}
+
+
+
+<div class="jumbotron" id="index-jumbotron">
+    <div id="search">
+        <form action="{% url 'search' %}" method="post">
+            {% csrf_token %}
+            <div id="search-form">
+                <div id="search-check-in">
+                    <label for="search-check-in-input">Check In</label>
+                    <input type="date" id="search-check-in-input" name="search-check-in">
+                </div>
+                <div id="search-check-in">
+                    <label for="search-check-out-input">Check Out</label>
+                    <input type="date" id="search-check-out-input" name="search-check-out">
+                </div>
+                <button id="search-button" type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </form>
+    </div>
+    <div class="container" id="index-container">
+
+
+
+        <div id="index-heading">
+            <h1>CYPRUS<span id="brand-highlight"> FOR YOU</span> Apartments</h1>
+            <h3>in the heart of Limassol...</h3>
+        </div>
+    </div>
+</div>
+
+<script src="../../static/hotel/index.js"></script>
+{% endblock %}
