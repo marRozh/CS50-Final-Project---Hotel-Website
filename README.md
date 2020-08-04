@@ -13,4 +13,3 @@
 - User will be taken to 'Your Bookings' section where they can see all their upcoming bookings
 - Using log out button, user can log out of the page, if they log back in, they will still see all their upcoming bookings in the 'Your Bookings' page
 
-Thank you! :)
